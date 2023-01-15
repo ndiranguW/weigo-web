@@ -1,0 +1,30 @@
+.top-nav {
+  position: sticky;
+  top: 0;
+}
+
+.logo {
+  width: 5em;
+}
+
+.nav-link:hover {
+  border-bottom: 1px #34c7f2 solid;
+}
+
+a {
+  color: #061466;
+}
+
+.navbar-nav .nav-link {
+  color: rgb(6, 31, 63);
+  font-weight: 500;
+}
+
+.navbar-nav .nav-link.actvie {
+  color: red;
+}
+
+.nav__text {
+  color: #061466;
+  font-weight: 600;
+}
