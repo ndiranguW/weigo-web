@@ -1,19 +1,17 @@
-import "./App.css";
+import "./styles/base/base.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import React from "react";
 
-import { Home } from "./pages";
-import { About } from "./pages";
-import { Contact } from "./pages";
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Contact from "./pages/Contact";
 import { Navbar } from "./components";
 
 function App() {
   return (
     <BrowserRouter>
       <div className="main">
-        <div>
-          <Navbar />
-        </div>
+        <Navbar />
         <div>
           <Routes>
             <Route index element={<Home />} />
