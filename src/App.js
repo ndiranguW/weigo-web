@@ -6,6 +6,7 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import { Navbar } from "./components";
+import Footer from "./components/custom/Footer";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
             <Route path="blog" element={<Contact />} />
           </Routes>
         </div>
+        <Footer />
       </div>
     </BrowserRouter>
   );
