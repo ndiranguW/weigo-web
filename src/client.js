@@ -5,4 +5,5 @@ export default sanityClient({
   dataset: "production",
   useCdn: true,
   apiVersion: "v2021-10-21",
+  apiUrl: "https://weigo.sanity.studio"
 });
