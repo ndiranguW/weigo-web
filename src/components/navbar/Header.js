@@ -14,7 +14,7 @@ const Header = () => {
         <div className="container">
           <div className="top-nav__logo">
             <NavLink to="/" className="" exact="true">
-              <img src={logo} alt="weigo logo" className="logo" />
+              <img src={logo} alt="weigo logo" className="navbar-logo" />
             </NavLink>
           </div>
           <button
@@ -41,7 +41,7 @@ const Header = () => {
                 About
               </NavLink>
               <NavLink to="blog" className={"nav-link"}>
-                Blog
+                Learn more
               </NavLink>
               <div>
                 <button
