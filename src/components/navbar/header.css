@@ -7,10 +7,10 @@
 }
 
 .top-nav {
-  height: 68px;
+  height: 58px;
   width: 100%;
   z-index: 10;
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.699);
   border: 1px solid rgba(0, 0, 0, 0.08);
   box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.04);
   border-radius: 8px;
@@ -18,7 +18,12 @@
 
 .navbar-nav .nav-link {
   color: rgb(0, 0, 0);
+  /* color: #fff; */
   font-weight: 500;
+}
+
+.navbar-nav nav-link:hover {
+  color: rgb(223, 201, 11);
 }
 
 .navbar-logo {
