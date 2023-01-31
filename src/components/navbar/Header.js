@@ -43,6 +43,34 @@ const Header = () => {
               <NavLink to="blog" className={"nav-link"}>
                 Learn more
               </NavLink>
+
+              <div className="dropdown">
+                <NavLink
+                  className={"nav-link drop-down"}
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Drop me
+                </NavLink>
+                <ul className="dropdown-menu">
+                  <li>
+                    <a className="dropdown-item" href="www.example.com">
+                      Action
+                    </a>
+                  </li>
+                  <li>
+                    <a className="dropdown-item" href="www.example.com">
+                      Another action
+                    </a>
+                  </li>
+                  <li>
+                    <a className="dropdown-item" href="www.example.com">
+                      Something else here
+                    </a>
+                  </li>
+                </ul>
+              </div>
+
               <div>
                 <button
                   className={"btn btn-outline-primary  m-1 "}
