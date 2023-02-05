@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import sanityClient from "../client";
 import "../styles/pages/pages.css";
 import Features from "../components/custom/Features";
+import Purpose from "../components/custom/Purpose";
 
 export default function Home() {
   const [homeContent, setHomeContent] = useState([]);
@@ -28,25 +29,32 @@ export default function Home() {
   return (
     <div>
       <div className="container-fluid home-container">
-        {homeContent.map((item, index) => (
-          <div key={index} className="text-center home-section">
-            <div className="home-section__child px-5">
-              <div>
+        <div className="row h-100">
+          {homeContent.map((item, index) => (
+            <div
+              key={index}
+              className="col-sm-12 col-md-12 col-lg-6 d-flex align-items-center  mx-auto"
+            >
+              <div className="home-section__child text-center">
                 <span className="home__welcome-text ">
                   <h2 className="mb-4">{item.welcome}</h2>
                 </span>
                 <p className="home__welcome-desc">{item.description}</p>
-                <div className="home__action-btns">
-                  <button type="button" className="home-explore__btn">
+                <div className="home-action__btns mt-5">
+                  <button type="button" className="btns home-explore__btn me-2">
                     Explore
+                  </button>
+                  <button type="button" className="btns">
+                    Download App
                   </button>
                 </div>
               </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
       <Features />
+      <Purpose />
     </div>
   );
 }
