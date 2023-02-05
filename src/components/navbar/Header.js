@@ -36,7 +36,6 @@ const Header = () => {
               <NavLink to="/" exact="true" className={"nav-link "}>
                 Home
               </NavLink>
-
               <NavLink to="about" className={"nav-link"}>
                 About
               </NavLink>
@@ -73,7 +72,7 @@ const Header = () => {
 
               <div>
                 <button
-                  className={"btn btn-outline-primary  m-1 "}
+                  className={"demo-btn m-1 "}
                   onClick={() => setShowModal(true)}
                 >
                   Request Demo
