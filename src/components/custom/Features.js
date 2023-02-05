@@ -24,9 +24,9 @@ const Features = () => {
   }, []);
 
   return (
-    <div className="features-container p-4">
+    <div className="features-container p-2">
       <div className="container mt-5">
-        <div className="feature-page-text w-50 mx-auto">
+        <div className="feature-page-text col-sm-12 col-lg-6 mx-auto">
           <h2 className="text-center">
             The all-in-one platform to manage your construction.
           </h2>
@@ -37,7 +37,7 @@ const Features = () => {
         </div>
         <div className="row d-flex justify-content-center mt-4">
           {featureContent.map((feature, index) => (
-            <div key={index} className="col-sm-12 col-md-8 col-lg-3">
+            <div key={index} className="col-sm-12 col-md-8 col-lg-3 mb-1">
               <div className="card text-center">
                 <img
                   src={feature.image.asset.url}
