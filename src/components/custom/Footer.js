@@ -11,7 +11,7 @@ import {
 const Footer = () => {
   return (
     <div className="container-fluid footer">
-      <div className="container p-2">
+      <div className="container  p-2">
         <div class="custom-shape-divider-bottom-1675153626">
           <svg
             data-name="Layer 1"
