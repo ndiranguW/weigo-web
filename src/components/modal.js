@@ -46,13 +46,17 @@ const Modal = ({ showModal, setShowModal }) => {
     showModal && (
       <div className="modal-popup">
         <div className="modal-box">
-          <div className="row">
-            <div className="col-sm-12 col-md-12 col-lg-6 p-0">
-              <p className="p-4 text-center">Improve the rate of procuring </p>
+          <div className="row d-flex justify-content-center align-items-center">
+            <div className="col-sm-12 col-md-12 col-lg-6 text-center">
+              <h3>Book a Demo</h3>
+              <p className="p-4">
+                Please fill out this form and our team will reach out to you for
+                a demo session.
+              </p>
             </div>
-            <div className="col-sm-12 col-md-12 col-lg-6 p-4">
+            <div className="col-sm-12 col-md-12 col-lg-6">
               <form ref={form} onSubmit={handleSubmit}>
-                <label htmlFor="name">Name* </label>
+                <label htmlFor="name">Name </label>
                 <div className="input-group mb-3 input-group-sm">
                   <input
                     type={"text"}
@@ -66,7 +70,7 @@ const Modal = ({ showModal, setShowModal }) => {
                 </div>
                 <div className="row">
                   <div className="col-sm-12 col-md-12 col-lg-6">
-                    <label htmlFor="email">Email* </label>{" "}
+                    <label htmlFor="email">Email </label>
                     <div className="input-group input-group-sm mb-3">
                       <input
                         type={"email"}
@@ -80,7 +84,7 @@ const Modal = ({ showModal, setShowModal }) => {
                     </div>
                   </div>
                   <div className="col-sm-12 col-md-12 col-lg-6">
-                    <label htmlFor="company">Company Name* </label>{" "}
+                    <label htmlFor="company">Company Name </label>
                     <div className="input-group input-group-sm mb-3">
                       <input
                         type={"text"}
@@ -95,7 +99,9 @@ const Modal = ({ showModal, setShowModal }) => {
                   </div>
                 </div>
 
-                <label htmlFor="message">Message 'or' Questions </label>
+                {/* add two input fields for job title, .... */}
+
+                <label htmlFor="message">Message</label>
                 <div className="input-group input-group-sm mb-3">
                   <textarea
                     type={"text"}
