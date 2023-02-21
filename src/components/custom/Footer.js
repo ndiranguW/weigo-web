@@ -17,8 +17,8 @@ const Footer = () => {
                 <p>
                   <FontAwesomeIcon icon={faLocationPin} color="#fd7e14" />
                   &nbsp; Nairobi, Upperhill, Hospital Road
-                  <p>(987654-12321)</p>
                 </p>
+                <p>(987654-12321)</p>
                 <p>
                   <FontAwesomeIcon icon={faAt} color="#fd7e14" />
                   &nbsp; hello@weigo.io
@@ -54,7 +54,7 @@ const Footer = () => {
                 <a
                   href="https://www.linkedin.com/company/wweigo/"
                   className="footer-links"
-                  target={'blank'}
+                  target={"blank"}
                 >
                   <FontAwesomeIcon
                     icon={faLinkedin}
