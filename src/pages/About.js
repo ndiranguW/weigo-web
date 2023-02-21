@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import sanityClient from "../client";
 import imageUrlBuilder from "@sanity/image-url";
 import Loader from "../components/custom/Loader";
+import AboutPurpose from "../components/custom/AboutPurpose";
 
 const About = () => {
   const builder = imageUrlBuilder(sanityClient);
@@ -47,6 +48,9 @@ const About = () => {
             <div className="col-sm-12 col-md-12 col-lg-12">
               <p className="text-center">{aboutPageContent.aboutus}</p>
             </div>
+          </div>
+          <div>
+            <AboutPurpose />
           </div>
         </div>
 
