@@ -5,6 +5,7 @@ import { faArrowRightLong } from "@fortawesome/free-solid-svg-icons";
 import BlockContent from "@sanity/block-content-to-react";
 import sanityClient from "../../client";
 import { Link } from "react-router-dom";
+import Loader from "../custom/Loader";
 
 const Purpose = () => {
   const [purposeContent, setPurposecontent] = useState([]);
@@ -22,6 +23,10 @@ const Purpose = () => {
       .then((response) => setPurposecontent(response))
       .catch((error) => console.log(error));
   });
+
+  if (!purposeContent) {
+    return <Loader />;
+  }
 
   return (
     <div className="purpose-container py-5">
