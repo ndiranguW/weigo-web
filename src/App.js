@@ -4,9 +4,10 @@ import React from "react";
 
 import Home from "./pages/Home";
 import About from "./pages/About";
-import Contact from "./pages/Contact";
+import Blogs from "./pages/Blogs";
 import { Navbar } from "./components";
 import Footer from "./components/custom/Footer";
+import Post from "./components/custom/Post";
 
 function App() {
   return (
@@ -15,9 +16,10 @@ function App() {
         <Navbar />
         <div>
           <Routes>
-            <Route index element={<Home />} />
-            <Route path="about" element={<About />} />
-            <Route path="blog" element={<Contact />} />
+            <Route index path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/blog" element={<Blogs />} />
+            <Route path="/blog/:slug" element={<Post />} />
           </Routes>
         </div>
         <Footer />
