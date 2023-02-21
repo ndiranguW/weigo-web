@@ -1,48 +1,56 @@
 // purpose is who are we building for
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {   faArrowRightLong } from "@fortawesome/free-solid-svg-icons";
+import { faArrowRightLong } from "@fortawesome/free-solid-svg-icons";
+import BlockContent from "@sanity/block-content-to-react";
+import sanityClient from "../../client";
+import { Link } from "react-router-dom";
 
 const Purpose = () => {
+  const [purposeContent, setPurposecontent] = useState([]);
+
+  // query sanity
+  useEffect(() => {
+    const query = `*[_type == 'purpose']{
+      title,
+      slug,
+      body,
+    }`;
+
+    sanityClient
+      .fetch(query)
+      .then((response) => setPurposecontent(response))
+      .catch((error) => console.log(error));
+  });
+
   return (
-    <div className="container-fluid purpose-container p-2">
-      <div className="container mt-5">
-        <div className="row h-100">
-          <div className="col-sm-12 col-lg-6 d-flex align-items-center mx-auto">
-            <div>
-              <h2 className="text-center">Built for who?</h2>
-              <p className="text-center text-secondary">
-                lorem ipsum dolor amet!lorem ipsum dolor amet! lorem ipsum dolor
-                amet! lorem ipsum dolor amet!
-              </p>
+    <div className="purpose-container py-5">
+      <div className="container">
+        <div className="row">
+          <div className="col-sm-12 col-md-12 col-lg-6  mx-auto">
+            <div className="mt-3 text-center">
+              <h2 className="fw-semibold">Built for who?</h2>
             </div>
           </div>
         </div>
         <div className="row d-flex justify-content-center mx-auto">
-          <div className="col-sm-12 col-md-6 col-lg-4 ">
-            <div className="card  border rounded p-3 mb-1">
-              <p>
-                lorem dolor amet you ina hopeless place. now we here in a
-                Hopeful state and abudance.
-              </p>
-              <a href="https://www.example.com">
-                Learn more{" "}
-                <span>
-                  <FontAwesomeIcon icon={faArrowRightLong} color="blue" />
-                </span>
-              </a>
-            </div>
-          </div>
-
-          <div className="col-sm-12 col-md-6 col-lg-4">
-            <div className="card  border rounded p-3">
-              <p>
-                lorem dolor amet you ina hopeless place. now we here in a
-                Hopeful state and abudance.
-              </p>
-              <a href="https://www.example.com">Learn more</a>
-            </div>
-          </div>
+          {purposeContent &&
+            purposeContent.map((post, index) => (
+              <div key={index} className="col-sm-12 col-md-6 col-lg-4">
+                <div className="card  border rounded p-3 mb-1">
+                  <h4 className="fw-semibold">{post.title}</h4>
+                  <div className="text-truncate-container">
+                    <BlockContent blocks={post.body} />
+                  </div>
+                  <Link to="/about/">
+                    Learn more
+                    <span>
+                      <FontAwesomeIcon icon={faArrowRightLong} />
+                    </span>
+                  </Link>
+                </div>
+              </div>
+            ))}
         </div>
       </div>
     </div>
