@@ -14,9 +14,33 @@ export default {
       title: 'About Us',
     },
     {
-      name: 'banner',
-      title: "About Image",
-      type: "image"
-    }
+      name: 'mission',
+      title: 'Company Mission',
+      type: 'array',
+      of: [{type: 'block'}],
+    },
+    {
+      name: 'missionimage',
+      title: 'Mission Image',
+      type: 'image',
+      options: {
+        hotspot: true,
+      },
+    },
+
+    {
+      name: 'vision',
+      title: 'Company Vision',
+      type: 'array',
+      of: [{type: 'block'}],
+    },
+    {
+      name: 'visionimage',
+      title: 'Vision Image',
+      type: 'image',
+      options: {
+        hotspot: true,
+      },
+    },
   ],
 }

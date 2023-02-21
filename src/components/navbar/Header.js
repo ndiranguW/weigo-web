@@ -10,7 +10,7 @@ const Header = () => {
 
   return (
     <div className="container-fluid top-nav__container ps-4 pe-4">
-      <nav className="top-nav navbar navbar-expand-lg">
+      <nav className="top-nav navbar navbar-expand-lg bg-light">
         <div className="container">
           <div className="top-nav__logo">
             <NavLink to="/" className="" exact="true">
@@ -40,35 +40,8 @@ const Header = () => {
                 About
               </NavLink>
               <NavLink to="blog" className={"nav-link"}>
-                Learn more
+                Blog
               </NavLink>
-
-              <div className="dropdown">
-                <NavLink
-                  className={"nav-link drop-down"}
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
-                  Drop me
-                </NavLink>
-                <ul className="dropdown-menu">
-                  <li>
-                    <a className="dropdown-item" href="www.example.com">
-                      Action
-                    </a>
-                  </li>
-                  <li>
-                    <a className="dropdown-item" href="www.example.com">
-                      Another action
-                    </a>
-                  </li>
-                  <li>
-                    <a className="dropdown-item" href="www.example.com">
-                      Something else here
-                    </a>
-                  </li>
-                </ul>
-              </div>
 
               <div>
                 <button

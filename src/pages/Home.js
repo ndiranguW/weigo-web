@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import sanityClient from "../client";
-import "../styles/pages/pages.css";
+import "../styles/pages.css";
 import Features from "../components/custom/Features";
 import Purpose from "../components/custom/Purpose";
+import { Contact } from "../components";
 
 export default function Home() {
   const [homeContent, setHomeContent] = useState([]);
@@ -11,7 +12,7 @@ export default function Home() {
     const query = `*[_type == 'home']{
           welcome,
         description,
-        image{
+        image{ 
           asset->{url}
         },
       }`;
@@ -27,15 +28,15 @@ export default function Home() {
   }, []);
 
   return (
-    <div>
+    <div className="main-page">
       <div className="container-fluid home-container">
         <div className="row h-100">
           {homeContent.map((item, index) => (
             <div
               key={index}
-              className="col-sm-12 col-md-12 col-lg-6 d-flex align-items-center  mx-auto"
+              className="col-sm-12 col-md-12 col-lg-6 d-flex align-items-center mx-auto "
             >
-              <div className="home-section__child text-center">
+              <div className="home-section__child py-5 text-center">
                 <span className="home__welcome-text ">
                   <h2 className="mb-4">{item.welcome}</h2>
                 </span>
@@ -44,7 +45,7 @@ export default function Home() {
                   <button type="button" className="btns home-explore__btn me-2">
                     Explore
                   </button>
-                  <button type="button" className="btns">
+                  <button type="button" className="btns d-none" disabled>
                     Download App
                   </button>
                 </div>
@@ -55,6 +56,7 @@ export default function Home() {
       </div>
       <Features />
       <Purpose />
+      <Contact />
     </div>
   );
 }
