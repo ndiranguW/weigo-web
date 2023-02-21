@@ -33,13 +33,14 @@ const Purpose = () => {
         <div className="row d-flex justify-content-center mx-auto">
           {purposeContent &&
             purposeContent.map((post, index) => (
-              <div key={index} className="col-sm-12 col-md-6 col-lg-4">
-                <div className="p-3 mb-1">
+              <div key={index} className="row">
+                <div className="col-lg-10 p-3 mx-auto">
                   <h4 className="fw-semibold">{post.title}</h4>
-                  <div className="text-truncate-container">
+                  <div className="post-content">
                     <BlockContent blocks={post.body} />
                   </div>
                 </div>
+                <div className="col-lg-4"></div>
               </div>
             ))}
         </div>
