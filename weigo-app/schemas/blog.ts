@@ -35,18 +35,23 @@ export default {
       name: 'body',
       title: 'Body',
       type: 'array',
-      of: [{type:'block'}]
+      of: [{type: 'block'}],
     },
-    // {
-    //   name: 'categories',
-    //   title: 'Categories',
-    //   type: 'array',
-    //   of: [{type: 'reference', to: {type: 'category'}}],
-    // },
+    {
+      name: 'categories',
+      title: 'Categories',
+      type: 'array',
+      of: [{type: 'reference', to: [{type: 'category'}]}],
+    },
     {
       name: 'publishedAt',
       title: 'Published at',
       type: 'datetime',
+      options: {
+        dateFormat: 'YYYY-MM-DD',
+        timeFormaat: 'HH:mm',
+        calendarTodayLable: 'Today',
+      },
     },
     {
       name: 'tags',
@@ -61,13 +66,13 @@ export default {
       author: 'author.name',
       media: 'mainImage',
     },
-    prepare(selection: { title?: any; media?: any; author?: any; }) {
-      const {author} = selection;
+    prepare(selection: {title?: any; media?: any; author?: any}) {
+      const {author} = selection
       return {
         title: selection.title,
         subtitle: author && `by ${author}`,
         media: selection.media,
-      };
+      }
     },
   },
-};
+}
