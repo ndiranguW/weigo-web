@@ -27,6 +27,12 @@
   font-size: 1.3em;
 }
 
+.home-section__child {
+  background-color: rgba(0, 10, 10, 0.682);
+  padding: 8px;
+  border-radius: 8px;
+}
+
 .home__banner-img {
   width: 100%;
   height: auto;
@@ -39,6 +45,7 @@
   color: #fff;
   font-weight: bold;
   background-color: rgba(255, 255, 255, 0);
+  text-decoration: none;
 }
 
 .home-action__btns .btns:nth-last-child(1) {
@@ -52,7 +59,7 @@
 }
 
 .contact-form {
-  background: linear-gradient(to right, #a0a, #580491);
+  background: linear-gradient(to right, #fd7d14cc, #1a2d38de);
 }
 /* homepage end */
 
@@ -265,8 +272,9 @@
 /* responsiveness */
 @media only screen and (max-width: 600px) {
   .home__welcome-text h2 {
-    font-size: 1.8em;
+    font-size: 1.6em;
     font-weight: 500;
+    margin-top: 80px;
   }
 
   .home__welcome-desc {

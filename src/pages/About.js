@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import sanityClient from "../client";
 import imageUrlBuilder from "@sanity/image-url";
 import Loader from "../components/custom/Loader";
-import AboutPurpose from "../components/custom/AboutPurpose";
+import { AboutPurpose } from "../components";
 
 const About = () => {
   const builder = imageUrlBuilder(sanityClient);

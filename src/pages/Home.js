@@ -4,6 +4,7 @@ import "../styles/pages.css";
 import Features from "../components/custom/Features";
 import Purpose from "../components/custom/Purpose";
 import { Contact } from "../components";
+import { Link } from "react-router-dom";
 
 export default function Home() {
   const [homeContent, setHomeContent] = useState([]);
@@ -29,12 +30,12 @@ export default function Home() {
 
   return (
     <div className="main-page">
-      <div className="container-fluid home-container">
+      <div className="container-fluid home-container ">
         <div className="row h-100">
           {homeContent.map((item, index) => (
             <div
               key={index}
-              className="col-sm-12 col-md-12 col-lg-6 d-flex align-items-center mx-auto "
+              className="col-sm-12 col-md-12 col-lg-8 d-flex align-items-center mx-auto "
             >
               <div className="home-section__child py-5 text-center">
                 <span className="home__welcome-text ">
@@ -42,9 +43,9 @@ export default function Home() {
                 </span>
                 <p className="home__welcome-desc">{item.description}</p>
                 <div className="home-action__btns mt-5">
-                  <button type="button" className="btns home-explore__btn me-2">
+                  <Link to="/about/" className="btns home-explore__btn">
                     Explore
-                  </button>
+                  </Link>
                   <button type="button" className="btns d-none" disabled>
                     Download App
                   </button>
