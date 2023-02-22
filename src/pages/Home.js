@@ -29,7 +29,7 @@ export default function Home() {
 
   return (
     <div className="main-page">
-      <div className="container-fluid home-container">
+      <div className="container-fluid home-container ">
         <div className="row h-100">
           {homeContent.map((item, index) => (
             <div
