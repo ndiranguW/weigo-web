@@ -22,7 +22,7 @@ const Purpose = () => {
       .fetch(query)
       .then((response) => setPurposecontent(response))
       .catch((error) => console.log(error));
-  });
+  }, []);
 
   if (!purposeContent) {
     return <Loader />;

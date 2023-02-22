@@ -18,7 +18,7 @@ const Purpose = () => {
       .fetch(query)
       .then((response) => setPurposecontent(response))
       .catch((error) => console.log(error));
-  });
+  }, []);
 
   return (
     <div className="purpose-container py-2">
