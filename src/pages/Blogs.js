@@ -43,7 +43,7 @@ const Blogs = () => {
           <div className="row h-100 mt-5 p-1">
             {blogPosts &&
               blogPosts.map((post, index) => (
-                <div key={index} className="col-sm-12 col-md-6 col-lg-4">
+                <div key={index} className="col-sm-12 col-md-6 col-lg-4 mb-2">
                   <div className="card border">
                     <div className="card-header">
                       <img
