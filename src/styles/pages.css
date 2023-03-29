@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap");
 
 .about-page,
 .blogs-page,
@@ -8,7 +9,7 @@
 }
 /* homepage */
 .home-container {
-  background: linear-gradient(rgba(2, 39, 56, 0.349), rgba(0, 0, 0, 0.58)),
+  background: linear-gradient(rgba(2, 39, 10, 0.349) 20%, rgba(0, 0, 0, 0.5)),
     url(https://cdn.sanity.io/images/25xh2j08/production/ffba192df5d3f62213fd501ffab10fe71cfe67b9-4475x2517.jpg);
   background-repeat: no-repeat;
   background-position: center;
@@ -25,11 +26,11 @@
 .home__welcome-desc {
   color: #fff;
   font-size: 1.3em;
+  font-family: "Tilt Neon", cursive;
 }
 
 .home-section__child {
-  background-color: rgba(0, 10, 10, 0.682);
-  padding: 8px;
+  background-color: rgba(0, 4, 4, 0.4);
   border-radius: 8px;
 }
 
@@ -267,18 +268,50 @@
   text-decoration: none;
 }
 
+/* footer contact form */
+.form__group {
+  position: relative;
+}
+
+.form__field {
+  width: 100%;
+  border: 0;
+  border-bottom: 1px solid gray;
+  outline: 0;
+  color: white;
+  padding: 7px 0;
+  background: transparent;
+  transition: border-color 0.2s;
+}
+
+.form__label {
+  position: absolute;
+  top: 0;
+  display: block;
+  transition: 0.2s;
+  font-size: 1rem;
+  color: rgb(236, 233, 233);
+}
+
+.form__field:focus {
+  font-weight: 600;
+  border-width: 1px;
+  border-image-slice: 1;
+}
 /* footer section end */
 
 /* responsiveness */
-@media only screen and (max-width: 600px) {
+/* @media only screen and (max-width: 600px) */
+@media screen and (max-width: 767px) {
   .home__welcome-text h2 {
-    font-size: 1.6em;
+    font-size: 1.4em;
     font-weight: 500;
     margin-top: 80px;
   }
 
   .home__welcome-desc {
     color: #fff;
+    font-size: 1em;
   }
 
   .modal-box {
