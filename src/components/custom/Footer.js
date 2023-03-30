@@ -1,13 +1,14 @@
 import React from "react";
 import logo from "../../assets/logo-white.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faAt, faLocationPin } from "@fortawesome/free-solid-svg-icons";
+import { NavLink } from "react-router-dom";
+import ContactForm from "./ContactForm";
 import {
   faTwitter,
   faLinkedin,
   faFacebook,
 } from "@fortawesome/free-brands-svg-icons";
-import { faAt, faLocationPin } from "@fortawesome/free-solid-svg-icons";
-import { NavLink } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -65,47 +66,8 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* footer contact form */}
           <div className="col-sm-12 col-md-8 col-lg-4 mt-5 me-4">
-            <h3 style={{ color: "#fd7e14" }}>Feedback.</h3>
-            <form>
-              <div className="form__group">
-                <div className="mb-2">
-                  <input
-                    type={"text"}
-                    placeholder="Your Name"
-                    className="form__field"
-                    required
-                  />
-                </div>
-                <div className="mb-2">
-                  <input
-                    type={"text"}
-                    placeholder="Title & Company name"
-                    className="form__field"
-                  />
-                </div>
-                <div className="mb-3">
-                  <input
-                    type={"email"}
-                    placeholder="Your Email"
-                    className="form__field"
-                    required
-                  />
-                </div>
-                <div className="mb-2">
-                  <textarea
-                    className="form__field"
-                    placeholder="Your comments or feedback"
-                    rows={"1"}
-                    required
-                  ></textarea>
-                </div>
-                <div className="mb-3">
-                  <button className="demo-btn w-100">Send</button>
-                </div>
-              </div>
-            </form>
+            <ContactForm />
           </div>
 
           <div className="col-sm-12 col-md-4 col-lg-2 mt-5">
