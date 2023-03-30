@@ -4,3 +4,4 @@ export { default as Navbar } from "./navbar/Header";
 // * eg: import {Contact} from '<path>/component'
 export { default as Contact } from "./custom/Contact";
 export { default as AboutPurpose } from "./custom/AboutPurpose";
+export { default as ContactForm } from "./custom/ContactForm";
