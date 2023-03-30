@@ -3,6 +3,8 @@ import emailjs from "@emailjs/browser";
 
 const ContactForm = () => {
   const form = useRef();
+  const [error, setError] = useState("");
+  const [feedback, setFeedback] = useState("");
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -10,8 +12,7 @@ const ContactForm = () => {
     message: "",
   });
 
-  // const [successMsg, setSuccessMsg] = useState("");
-
+  // event handler for form interaction.
   const handleChange = (event) => {
     const { name, value } = event.target;
     setFormData({ ...formData, [name]: value });
@@ -19,7 +20,13 @@ const ContactForm = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(formData);
+    const { name, email, title, message } = formData;
+
+    // check all fields are filled.
+    if (!name || !email || !title || !message) {
+      setError("Please fill out all fields.");
+      return;
+    }
 
     // send email
     emailjs
@@ -31,10 +38,11 @@ const ContactForm = () => {
       )
       .then(
         (result) => {
-          console.log(result.text);
+          setFeedback("✅ Message sent successfully!");
         },
         (error) => {
-          console.error(error.text);
+          console.log(error.text);
+          setError("🤔 Oops, something went wrong. Please try again.");
         }
       );
 
@@ -46,14 +54,47 @@ const ContactForm = () => {
       message: "",
     });
 
-    // show feedback message
+    // clear error msg after submit.
+    setError("");
   };
 
   return (
-    <div className="">
+    <div className="msg-form">
       {/* footer contact form */}
       <h3 style={{ color: "#fd7e14" }}>Feedback.</h3>
+
       <form ref={form} onSubmit={handleSubmit}>
+        <div className="status-alert">
+          {error && (
+            <div
+              className="alert alert-danger d-flex align-items-center alert-dismissible fade show"
+              role="alert"
+            >
+              <div>{error}</div>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="alert"
+                aria-label="Close"
+              ></button>
+            </div>
+          )}
+
+          {feedback && (
+            <div
+              class="alert alert-success d-flex align-items-center alert-dismissible fade show"
+              role="alert"
+            >
+              <div>{feedback}</div>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="alert"
+                aria-label="Close"
+              ></button>
+            </div>
+          )}
+        </div>
         <div className="form__group">
           <div className="mb-2">
             <input
@@ -61,7 +102,6 @@ const ContactForm = () => {
               name="name"
               placeholder="Your Name"
               className="form__field"
-              required
               value={formData.name}
               onChange={handleChange}
             />
@@ -82,7 +122,6 @@ const ContactForm = () => {
               name={"email"}
               placeholder="Your Email"
               className="form__field"
-              required
               value={formData.email}
               onChange={handleChange}
             />
@@ -94,13 +133,15 @@ const ContactForm = () => {
               maxLength={200}
               placeholder="Your comments or feedback"
               rows={"1"}
-              required
               value={formData.message}
               onChange={handleChange}
             ></textarea>
           </div>
+
           <div className="mb-3">
-            <button className="demo-btn w-100">Send</button>
+            <button className="demo-btn w-100" type="submit">
+              Send
+            </button>
           </div>
         </div>
       </form>
