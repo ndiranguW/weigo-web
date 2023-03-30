@@ -1,29 +1,27 @@
 // contacct banner form
-import React from "react";
+import React, { useState } from "react";
+import Modal from "../modal";
 
 const Contact = () => {
+  // set states to interact with waitlist Modal.
+  const [showModal, setShowModal] = useState(false);
+
+  // 
+
   return (
     <div className="container p-5">
       <div className="row p-2 rounded contact-form">
-        <h3 className="text-center text-light fs-4">Join Waitlist</h3>
-        <div className="col-sm-12 col-lg-6 mx-auto ">
-          <form>
-            <div className="input-group input-group-md m-2">
-              <input
-                type={"email"}
-                className="form-control"
-                placeholder="john@company.com"
-              />
-              <button
-                type="submit"
-                value={"submit"}
-                className="btn btn-primary w-25"
-              >
-                Join
-              </button>
-            </div>
-          </form>
+        <h3 className="text-center text-light fs-4">Join Our Waitlist</h3>
+        <p></p>
+        <div className="mt-2 text-center">
+          <button
+            className="btn btn-primary"
+            onClick={() => setShowModal(true)}
+          >
+            Join Waitlist
+          </button>
         </div>
+          <Modal showModal={showModal} setShowModal={setShowModal} />
       </div>
     </div>
   );
