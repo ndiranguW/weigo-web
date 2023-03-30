@@ -1,61 +1,18 @@
-import React, { useState, useRef } from "react";
-import emailjs from "@emailjs/browser";
+import React from "react";
 
 const Modal = ({ showModal, setShowModal }) => {
-  const form = useRef();
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
-    company: "",
-  });
-
-  const handleChange = (event) => {
-    const { name, value } = event.target;
-    setFormData({ ...formData, [name]: value });
-  };
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    console.log(formData);
-
-    // send email
-    emailjs
-      .sendForm(
-        "service_uwfbixm",
-        "template_plcokqf",
-        form.current,
-        "0__zkVvPljLTU0O0A"
-      )
-      .then(
-        (result) => {
-          console.log(result.text);
-        },
-        (error) => {
-          console.error(error.text);
-        }
-      );
-
-    // clear form fields
-    setFormData({ name: "", email: "", message: "", company: "" });
-    // close form after submit
-    setShowModal(false);
-  };
-
   return (
     showModal && (
       <div className="modal-popup">
         <div className="modal-box">
           <div className="row d-flex justify-content-center align-items-center">
-            <div className="col-sm-12 col-md-12 col-lg-6 text-center">
-              <h3>Book a Demo</h3>
-              <p className="p-4">
-                Please fill out this form and our team will reach out to you for
-                a demo session.
-              </p>
+            <div className="col-sm-12 col-md-12 col-lg-6 p-2">
+              <h3 className="font-bold text-center">Join The Waitlist</h3>
+              <p>Please fill out this form to join our product waitlist.</p>
+              <p>Our team will get back to you in a short while.</p>
             </div>
             <div className="col-sm-12 col-md-12 col-lg-6">
-              <form ref={form} onSubmit={handleSubmit}>
+              <form>
                 <label htmlFor="name">Name </label>
                 <div className="input-group mb-3 input-group-sm">
                   <input
@@ -64,22 +21,31 @@ const Modal = ({ showModal, setShowModal }) => {
                     className="form-control"
                     placeholder="John Doe"
                     required
-                    value={formData.name}
-                    onChange={handleChange}
+                    // value={}
+                    // onChange={}
+                  />
+                </div>
+                <label htmlFor="email">Email </label>
+                <div className="input-group input-group-sm mb-3">
+                  <input
+                    type={"email"}
+                    name="email"
+                    className="form-control"
+                    placeholder="john@example.com"
+                    required
                   ></input>
                 </div>
+
                 <div className="row">
                   <div className="col-sm-12 col-md-12 col-lg-6">
-                    <label htmlFor="email">Email </label>
-                    <div className="input-group input-group-sm mb-3">
+                    <label htmlFor="title">Job Title </label>
+                    <div className="input-group mb-3 input-group-sm">
                       <input
-                        type={"email"}
-                        name="email"
+                        type={"text"}
+                        name="title"
                         className="form-control"
-                        placeholder="john@example.com"
+                        placeholder="e.g; Project Manager"
                         required
-                        value={formData.email}
-                        onChange={handleChange}
                       ></input>
                     </div>
                   </div>
@@ -92,26 +58,9 @@ const Modal = ({ showModal, setShowModal }) => {
                         className="form-control"
                         placeholder="WeiGo"
                         required
-                        value={formData.company}
-                        onChange={handleChange}
                       ></input>
                     </div>
                   </div>
-                </div>
-
-                {/* add two input fields for job title, .... */}
-
-                <label htmlFor="message">Message</label>
-                <div className="input-group input-group-sm mb-3">
-                  <textarea
-                    type={"text"}
-                    name="message"
-                    className="form-control"
-                    placeholder="Type message..."
-                    required
-                    value={formData.message}
-                    onChange={handleChange}
-                  ></textarea>
                 </div>
                 <div className="modal-footer">
                   <button
@@ -120,7 +69,7 @@ const Modal = ({ showModal, setShowModal }) => {
                   >
                     close
                   </button>
-                  <button type="submit" className="btn btn-sm btn-success">
+                  <button type="submit" className="btn btn-sm btn-primary">
                     Send
                   </button>
                 </div>
