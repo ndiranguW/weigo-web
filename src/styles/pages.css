@@ -269,9 +269,6 @@
 }
 
 /* footer contact form */
-.form__group {
-  position: relative;
-}
 
 .form__field {
   width: 100%;
@@ -297,6 +294,10 @@
   font-weight: 600;
   border-width: 1px;
   border-image-slice: 1;
+}
+.status-alert {
+  width: 40%;
+  top: 0;
 }
 /* footer section end */
 
