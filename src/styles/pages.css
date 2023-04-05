@@ -1,6 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@700&family=Nunito+Sans&family=Tilt+Neon&display=swap");
 
 .about-page,
 .blogs-page,
@@ -10,14 +8,12 @@
 /* homepage */
 .home-container {
   background: linear-gradient(rgba(2, 39, 10, 0.349) 20%, rgba(0, 0, 0, 0.5)),
-    url(https://cdn.sanity.io/images/25xh2j08/production/ffba192df5d3f62213fd501ffab10fe71cfe67b9-4475x2517.jpg);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
+    url(https://cdn.sanity.io/images/25xh2j08/production/ffba192df5d3f62213fd501ffab10fe71cfe67b9-4475x2517.jpg)
+      no-repeat center/cover;
   height: 100vh;
 }
 
-.home__welcome-text h2 {
+.heroTitle {
   color: #fff;
   font-family: "Merriweather Sans", sans-serif;
   font-size: 2.2em;
@@ -52,11 +48,10 @@
 .home-action__btns .btns:nth-last-child(1) {
   background-color: #fd7e14;
   color: #000;
-  /* display: none; */
 }
 
 .home-action__btns .btns:nth-last-child(2):hover {
-  box-shadow: 0pc 2px 10px #fd7e14;
+  box-shadow: 0 2px 10px #fd7e14;
 }
 
 .contact-form {
@@ -80,7 +75,7 @@
   width: 80%;
   height: auto;
   border-radius: 16px 0 16px 0;
-  box-shadow: 0pc 2px 6px #585858;
+  box-shadow: 0 2px 6px #585858;
 }
 
 .mission {
@@ -108,25 +103,25 @@
 /* request demo popup style:start */
 .modal-popup {
   position: fixed;
-  background: #00000050;
+  background: #00000080;
   width: 100%;
   height: 100vh;
   top: 0;
   left: 0;
 }
 
-.modal-box {
+.modalBox {
   position: relative;
   margin: 0 auto;
   width: 60%;
+  transition: ease-in-out 400ms;
   height: auto;
   max-height: 70vh;
   margin-top: calc(100vh - 85vh - 20px);
   background: #fff;
   border-radius: 4px;
-  padding: 20px;
-  border: 1px solid #999;
   overflow: auto;
+  background-color: linear-gradient();
 }
 /* request demo popup style:end */
 
@@ -157,7 +152,7 @@
   height: auto;
 }
 
-.features-container h2:after {
+.features-container h2::after {
   content: "";
   display: block;
   margin: 1.5rem auto 0 auto;
@@ -296,8 +291,11 @@
   border-image-slice: 1;
 }
 .status-alert {
-  width: 40%;
+  position: absolute;
   top: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
+  width: 60%;
 }
 /* footer section end */
 
@@ -315,7 +313,7 @@
     font-size: 1em;
   }
 
-  .modal-box {
+  .modalBox {
     width: 90%;
   }
 
