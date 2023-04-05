@@ -12,7 +12,7 @@ const ContactForm = () => {
     message: "",
   });
 
-  // event handler for form interaction.
+  // event handler to get form input value.
   const handleChange = (event) => {
     const { name, value } = event.target;
     setFormData({ ...formData, [name]: value });
@@ -60,41 +60,41 @@ const ContactForm = () => {
 
   return (
     <div className="msg-form">
+      <div className="status-alert">
+        {error && (
+          <div
+            className="alert alert-danger d-flex align-items-center alert-dismissible fade show"
+            role="alert"
+          >
+            <div>{error}</div>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="alert"
+              aria-label="Close"
+            ></button>
+          </div>
+        )}
+
+        {feedback && (
+          <div
+            class="alert alert-success d-flex align-items-center alert-dismissible fade show"
+            role="alert"
+          >
+            <div>{feedback}</div>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="alert"
+              aria-label="Close"
+            ></button>
+          </div>
+        )}
+      </div>
       {/* footer contact form */}
       <h3 style={{ color: "#fd7e14" }}>Feedback.</h3>
 
       <form ref={form} onSubmit={handleSubmit}>
-        <div className="status-alert">
-          {error && (
-            <div
-              className="alert alert-danger d-flex align-items-center alert-dismissible fade show"
-              role="alert"
-            >
-              <div>{error}</div>
-              <button
-                type="button"
-                class="btn-close"
-                data-bs-dismiss="alert"
-                aria-label="Close"
-              ></button>
-            </div>
-          )}
-
-          {feedback && (
-            <div
-              class="alert alert-success d-flex align-items-center alert-dismissible fade show"
-              role="alert"
-            >
-              <div>{feedback}</div>
-              <button
-                type="button"
-                class="btn-close"
-                data-bs-dismiss="alert"
-                aria-label="Close"
-              ></button>
-            </div>
-          )}
-        </div>
         <div className="form__group">
           <div className="mb-2">
             <input
