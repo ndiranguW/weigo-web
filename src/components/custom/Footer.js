@@ -1,17 +1,22 @@
 import React from "react";
 import logo from "../../assets/logo-white.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTwitter, faLinkedin, faFacebook } from "@fortawesome/free-brands-svg-icons";
 import { faAt, faLocationPin } from "@fortawesome/free-solid-svg-icons";
 import { NavLink } from "react-router-dom";
+import ContactForm from "./ContactForm";
+import {
+  faTwitter,
+  faLinkedin,
+  faFacebook,
+} from "@fortawesome/free-brands-svg-icons";
 
 const Footer = () => {
   return (
     <div className="container-fluid footer">
-      <div className="container  p-2">
+      <div className="container p-2">
         <div className="row">
-          <div className="col-sm-4 col-md-6 col-lg-4 ">
-            <img src={logo} alt="footer logo" className="footer-logo " />
+          <div className="col-sm-12 col-md-8 col-lg-3">
+            <img src={logo} alt="footer logo" className="footer-logo" />
             <div className="footer__contact-details">
               <div className="">
                 <p>
@@ -22,7 +27,7 @@ const Footer = () => {
                   <FontAwesomeIcon icon={faAt} color="#fd7e14" />
                   &nbsp; hello@weigo.io
                 </p>
-                <div className="socials">
+                <div className="socials mt-4">
                   <a
                     href="https://www.facebook.com/profile.php?id=100090567519450&mibextid=LQQJ4d"
                     className="footer-links"
@@ -60,9 +65,14 @@ const Footer = () => {
               </div>
             </div>
           </div>
-          <div className="col-sm-6 col-md-6 col-lg-8 mt-5">
+
+          <div className="col-sm-12 col-md-8 col-lg-4 mt-5 me-4">
+            <ContactForm />
+          </div>
+
+          <div className="col-sm-12 col-md-4 col-lg-2 mt-5">
             <h4 style={{ color: "#fd7e14" }}>Quick Links</h4>
-            <div className="navbar-nav p-0">
+            <div className="navbar-nav">
               <NavLink
                 to="/"
                 exact="true"
@@ -78,6 +88,7 @@ const Footer = () => {
               </NavLink>
             </div>
           </div>
+
           <hr />
           <div className="footer-line">
             <div className="text-center">

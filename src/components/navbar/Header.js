@@ -3,10 +3,17 @@ import { NavLink } from "react-router-dom";
 import "./header.css";
 import logo from "./logo.png";
 import Modal from "../modal";
+import { faTimes } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Header = () => {
-  // set hook for popup-form button
+  // set hook for request-demo-form button and collapsed menu
   const [showModal, setShowModal] = useState(false);
+  const [collapsed, setCollapsed] = useState(true);
+
+  const toggleCollapsed = () => {
+    setCollapsed(!collapsed);
+  };
 
   return (
     <div className="container-fluid top-nav__container ps-4 pe-4">
@@ -20,19 +27,24 @@ const Header = () => {
           <button
             className="navbar-toggler"
             type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbar__collapse"
+            onClick={toggleCollapsed}
             aria-controls="navbar__collapse"
-            aria-expanded="false"
+            aria-expanded={!collapsed}
             aria-label="Toggle navigation"
           >
-            <span className="navbar-toggler-icon"></span>
+            {collapsed ? (
+              <span className="navbar-toggler-icon"></span>
+            ) : (
+              <FontAwesomeIcon icon={faTimes} />
+            )}
           </button>
           <div
-            className="collapse navbar-collapse justify-content-end"
+            className={`collapse navbar-collapse justify-content-end ${
+              collapsed ? "" : "show"
+            }`}
             id="navbar__collapse"
           >
-            <div className="navbar-nav p-0">
+            <div className="navbar-nav  p-0">
               <NavLink to="/" exact="true" className={"nav-link "}>
                 Home
               </NavLink>
@@ -48,7 +60,7 @@ const Header = () => {
                   className={"demo-btn m-1 "}
                   onClick={() => setShowModal(true)}
                 >
-                  Request Demo
+                  Join Waitlist
                 </button>
                 <Modal showModal={showModal} setShowModal={setShowModal} />
               </div>

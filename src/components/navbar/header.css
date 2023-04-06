@@ -30,21 +30,23 @@
   object-fit: contain;
 }
 
-.demo-btn{
+.demo-btn {
   border-radius: 6px;
   border: 1px #fd7e14 solid;
   padding: 4px 16px;
   background-color: rgba(255, 255, 255, 0);
+  color: #fd7e14;
+  font-weight: 600;
 }
 
-.demo-btn:hover{
+.demo-btn:hover {
   background-color: #fd7e14;
   color: #fff;
-  transition: .2s;
+  transition: 0.2s;
 }
 
 /* topnav small screen rules */
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 767px) {
   .top-nav {
     height: 10%;
     text-align: center;

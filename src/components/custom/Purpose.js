@@ -38,13 +38,13 @@ const Purpose = () => {
             </div>
           </div>
         </div>
-        <div className="row d-flex justify-content-center mx-auto">
+        <div className="row d-flex justify-content-center">
           {purposeContent &&
             purposeContent.map((post, index) => (
-              <div key={index} className="col-sm-12 col-md-6 col-lg-4">
+              <div key={index} className="col-sm-12 col-md-4 col-lg-4">
                 <div className="card  border rounded p-3 mb-1">
                   <h4 className="fw-semibold">{post.title}</h4>
-                  <div className="text-truncate-container">
+                  <div className="text-truncate-container card-text">
                     <BlockContent blocks={post.body} />
                   </div>
                   <Link to="/about/">
