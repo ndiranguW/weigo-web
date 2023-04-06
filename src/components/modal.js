@@ -86,12 +86,74 @@ const Modal = ({ showModal, setShowModal }) => {
             </div>
           )}
         </div>
+
         <div
           onClick={(e) => {
             e.stopPropagation();
           }}
           className="modalBox p-4"
         >
+          <div className="svgPath position-absolute">
+            <svg
+              id="visual"
+              viewBox="0 0 900 600"
+              className="w-100"
+              version="1.1"
+            >
+              <defs>
+                <linearGradient
+                  id="grad1_0"
+                  x1="33.3%"
+                  y1="100%"
+                  x2="100%"
+                  y2="0%"
+                >
+                  <stop
+                    offset="20%"
+                    stop-color="#000011"
+                    stop-opacity="1"
+                  ></stop>
+                  <stop
+                    offset="80%"
+                    stop-color="#000011"
+                    stop-opacity="1"
+                  ></stop>
+                </linearGradient>
+              </defs>
+              <defs>
+                <linearGradient
+                  id="grad2_0"
+                  x1="0%"
+                  y1="100%"
+                  x2="66.7%"
+                  y2="0%"
+                >
+                  <stop
+                    offset="20%"
+                    stop-color="#000011"
+                    stop-opacity="1"
+                  ></stop>
+                  <stop
+                    offset="80%"
+                    stop-color="#000011"
+                    stop-opacity="1"
+                  ></stop>
+                </linearGradient>
+              </defs>
+              <g transform="translate(900, 600)">
+                <path
+                  d="M-270.4 0C-243.8 -21.9 -217.2 -43.9 -201.6 -65.5C-186 -87.1 -181.4 -108.4 -169.1 -122.8C-156.8 -137.3 -136.9 -144.8 -123.4 -169.9C-110 -195 -103.1 -237.5 -83.6 -257.2C-64.1 -276.9 -32 -273.6 0 -270.4L0 0Z"
+                  fill="#fd7e14"
+                ></path>
+              </g>
+              <g transform="translate(0, 0)">
+                <path
+                  d="M270.4 0C272.4 31.4 274.5 62.8 257.2 83.6C239.9 104.3 203.3 114.5 182 132.3C160.8 150 154.8 175.3 139.3 191.7C123.8 208.2 98.7 215.7 73.9 227.3C49 238.9 24.5 254.7 0 270.4L0 0Z"
+                  fill="#fd7e14"
+                ></path>
+              </g>
+            </svg>
+          </div>
           <div className="modal-header justify-content-end ">
             <button
               type="button"
@@ -102,7 +164,7 @@ const Modal = ({ showModal, setShowModal }) => {
             ></button>
           </div>
           <div className="row d-flex justify-content-center align-items-center">
-            <div className="col-sm-12 col-md-12 col-lg-4 py-4 my-2 border border-3 border-dark">
+            <div className="col-sm-12 col-md-12 col-lg-4 py-4 my-2 me-3 border border-3 border-dark">
               <h3 className="fw-bolder">
                 Join <br />
                 Waitlist

@@ -4,7 +4,9 @@ import { useParams } from "react-router-dom";
 import imageBuilder from "@sanity/image-url";
 import BlockContent from "@sanity/block-content-to-react";
 import { format } from "date-fns";
+import Loader from "./Loader";
 
+// single post view page
 export default function Post() {
   const builder = imageBuilder(sanityClient);
   const [postContent, setPostContent] = useState(null);
@@ -37,6 +39,8 @@ export default function Post() {
       .catch((error) => console.log(error));
   }, [slug]);
 
+  if (!postContent) return <Loader />;
+
   return (
     <div className="container-fluid mb-4">
       <div className="container blog">
@@ -53,7 +57,7 @@ export default function Post() {
                     <img
                       src={urlFor(postContent.authorimg)}
                       alt={postContent.slug}
-                      className="post-author-img"
+                      className="post-author-img border border-2 border-info"
                     />
                     <span className="post-meta">
                       {postContent.author} &nbsp; &#9679; &nbsp;
