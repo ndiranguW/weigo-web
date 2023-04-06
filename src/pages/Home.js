@@ -39,7 +39,7 @@ export default function Home() {
             >
               <div className="home-section__child py-5 text-center">
                 <span className="home__welcome-text ">
-                  <h2 className="mb-4">{item.welcome}</h2>
+                  <h2 className="mb-4 heroTitle">{item.welcome}</h2>
                 </span>
                 <p className="home__welcome-desc">{item.description}</p>
                 <div className="home-action__btns mt-5">
